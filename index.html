@@ -70,7 +70,7 @@
   <div class="subtitle">别被顶上去！往下走～</div>
   <button class="btn" id="startBtn">开 始 游 戏</button>
   <div class="best">最深纪录 <b id="bestVal">0</b> 层</div>
-  <div class="tip">左右按钮 / 点屏幕左右半边 移动<br>板子不停<b>往上顶</b>，你左右走找缝往下掉<br>碰到<span style="color:#8A5A3B">尖刺板</span>或顶端<span style="color:#8A5A3B">尖刺</span>掉 1 格❤，3 格掉光结束 <span class="heart">♥</span></div>
+  <div class="tip">左右按钮 / 点屏幕左右半边 移动<br>板子不停<b>往上顶</b>，你左右走找缝往下掉<br>碰到<span style="color:#8A5A3B">尖刺板</span>或顶端<span style="color:#8A5A3B">尖刺</span>掉 1 格❤，2 格掉光结束 <span class="heart">♥</span></div>
 </div>
 
 <div class="overlay hidden" id="over">
@@ -176,7 +176,7 @@ function spawnCoinOnRow(bars) {
 
 function reset() {
   plats = []; coins = []; parts = [];
-  score = 0; coinsGot = 0; hearts = 3; invuln = 0;
+  score = 0; coinsGot = 0; hearts = 2; invuln = 0;
   grounded = false; groundedPlat = null;
   dir = 0; leftOn = rightOn = false;
 
@@ -600,7 +600,7 @@ function draw() {
 
   // 血条(左上角)
   if (state === S.PLAY) {
-    for (i = 0; i < 3; i++) drawHeart(24 + i * 30, 46, 12, i < hearts);
+    for (i = 0; i < 2; i++) drawHeart(24 + i * 30, 46, 12, i < hearts);
     ctx.save();
     ctx.font = "800 40px 'PingFang SC','Microsoft YaHei',sans-serif";
     ctx.textAlign = "right";
